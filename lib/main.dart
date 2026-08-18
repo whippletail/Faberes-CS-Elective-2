@@ -3,10 +3,6 @@ import 'package:go_router/go_router.dart';
 
 void main() => runApp(const FruitApp());
 
-// ---------------------------------------------------------------------------
-// Fruit "database" — each fruit has a name, an emoji (stand-in illustration),
-// and a color used to theme its detail page.
-// ---------------------------------------------------------------------------
 class Fruit {
   final String name;
   final String emoji;
@@ -20,11 +16,6 @@ const List<Fruit> fruits = [
   Fruit('mango', '🥭', Colors.orangeAccent),
 ];
 
-// ---------------------------------------------------------------------------
-// go_router configuration
-//   "/"               -> FruitListScreen  (list of fruits)
-//   "/fruit/:name"     -> FruitDetailScreen (redirect target, shows illustration)
-// ---------------------------------------------------------------------------
 final GoRouter _router = GoRouter(
   initialLocation: '/',
   routes: [
@@ -94,7 +85,6 @@ class FruitListScreen extends StatelessWidget {
 
 // ---------------------------------------------------------------------------
 // Page 2 — nested detail page at "/fruit/:name"
-// Shows a simple illustration (emoji in a colored circle) for the fruit.
 // ---------------------------------------------------------------------------
 class FruitDetailScreen extends StatelessWidget {
   final String name;
